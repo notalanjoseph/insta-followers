@@ -123,7 +123,7 @@ def __main__():
     
     
     no_followbacks = no_followback(followers_list, following_list)
-    for i in range(len(unfollow_list)):
+    for i in range(len(no_followbacks)):
         print (no_followbacks[i])
     
     
