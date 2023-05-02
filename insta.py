@@ -6,20 +6,24 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 count = 0
-username = 'not_a_l_a_n'
-password = ''
+username = 'trial4587'
+password = 'entryword'
+
 
 def login(driver):
     driver.find_element("name", "username").send_keys(username)
     driver.find_element("name", "password").send_keys(password)
     driver.find_element("name", "password").send_keys(u'\ue007')
     
+
 def click_button_with_css(driver, css_selector):
     element = WebDriverWait(driver, 20).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, css_selector)))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, css_selector))
+    )
     element.click()
     
-def navigate_to_followers(driver):
+
+def navigate_to_profile(driver):
     dropdown_css = '[alt*="' + username + '"]'
     profile_css = "[href*=\"" + username + "\"]"
     click_button_with_css(driver, dropdown_css)
@@ -28,39 +32,27 @@ def navigate_to_followers(driver):
     
 def get_usernames_from_dialog(driver):
     list_xpath ="//div[@role='dialog']//li"
-    
-    
- #   try:
-    WebDriverWait(driver, 20).until(
-            #EC.presence_of_element_located((By.XPATH, list_xpath)))
-       driver.find_element(By.XPATH, list_xpath)) #SO
-#    except:
-#        print("wait error")
-    
-    try:
-        scroll_down(driver)
-    except:
-        print("scroll error")
-    
-    try:
-        list_elems = driver.find_element("xpath", list_xpath)
-    except:
-        print("list error")
-    
-    users = []
-    for i in range(len(list_elems)):
-        try:
-            row_text = list_elems[i].text
-            if "Follow" in row_text or "Remove" in row_text:
-                username = row_text[:row_text.index("\n")]
-                users += [username]
-        except:
-            print("continue")
-            
-    return users     
 
+    
+    # ancestor div that contains the names is the first child of _aano
+    parent_div = driver.find_element("xpath", '//div[@class="_aano"]/*[1]')
+    
+    list_elems = []
+
+    # get all the child div elements of the parent div
+    child_divs = parent_div.find_elements("xpath", './/div')
+
+    # iterate through the child divs to extract the names
+    for div in child_divs:
+        name = div.text
+        list_elems.append(name)
+        
             
-def scroll_down(driver):
+    return list_elems     
+
+
+
+"""def scroll_down(driver):
     global count
     iter = 0
     while 1:
@@ -74,16 +66,17 @@ def scroll_down(driver):
             count = 0
             break
     return
+   
 
 def check_difference_in_count(driver):
     global count
-    new_count = len(driver.find_element("xpath", "//div[@role='dialog']//li"))
+    new_count = len(driver.find_elements("xpath", "//div[@role='dialog']//li"))
     if count != new_count:
         count = new_count
         return True
     else:
         return False
-    
+"""     
     
 def no_followback(followers, following):
     followers.sort()
@@ -105,7 +98,9 @@ def __main__():
     time.sleep(2)
     
     login(driver)
-    navigate_to_followers(driver)
+    time.sleep(8)
+    navigate_to_profile(driver)
+    time.sleep(2)
     
     
     followers_css = "[href*=\"" + username + "/followers/\"]"
@@ -115,6 +110,7 @@ def __main__():
     click_button_with_css(driver, followers_css)
     followers_list = get_usernames_from_dialog(driver)
     
+    time.sleep(2)
     click_button_with_css(driver, css_select_close)
     time.sleep(2)
     
@@ -126,9 +122,7 @@ def __main__():
     for i in range(len(no_followbacks)):
         print (no_followbacks[i])
     
-    
-    
-    
+   
     
     time.sleep(100)
     
@@ -137,6 +131,4 @@ def __main__():
     
     
 
-  
-    
 __main__() 
