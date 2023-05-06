@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 count = 0
 username = 'trial4587'
-password = 'entryword'
+password = ''
 
 
 def login(driver):
@@ -34,7 +34,7 @@ def get_usernames_from_dialog(driver):
     list_xpath ="//div[@role='dialog']//li"
 
     
-    # ancestor div that contains the names is the first child of _aano
+    # ancestor div that contains the names is the first child of div with class _aano
     parent_div = driver.find_element("xpath", '//div[@class="_aano"]/*[1]')
     
     list_elems = []
