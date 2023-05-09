@@ -5,11 +5,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-count = 0
-iter = 0
 username = ""
 password = ""
-
+count = 0
+iter = 0
 
 def login(driver):
     driver.find_element("name", "username").send_keys(username)
@@ -38,18 +37,12 @@ def get_usernames_from_dialog(driver):
     
     time.sleep(4)
     
-    scroll_down(driver)
-    time.sleep(2)
-    scroll_down(driver)
-    time.sleep(2)
-    scroll_down(driver)
-    time.sleep(2)
-    scroll_down(driver)
-    time.sleep(2)
-    scroll_down(driver)
-    time.sleep(2)
-    scroll_down(driver)
-    #add more if needed
+    #ADJUST n if needed
+    n = 50 #works for about 500 followers/following
+    while (n > 0):
+        scroll_down(driver)
+        time.sleep(2)
+        n = n - 1
 
     # ancestor div that contains the names is the first child of div with class _aano
     parent_div = driver.find_element("xpath", xpath_name)
