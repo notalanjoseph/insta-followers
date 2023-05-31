@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+
+  font-family: "Trebuchet MS", sans-serif;
+  background: url("images/bgm.png") no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  height: 10vh;
+  margin-top: 10vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  height: 60vh;
+  width: 80vw;
+  margin: auto; /*to centre the container div*/
+  margin-top: 15vh;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+/*  background-color: grey;
+*/
+}
+
+input {
+  width: 30vw;
+  border: none;
+  font-size: 3vh;
+  padding: 10px;
+  margin: 3vh;
+  border-radius: 5px;
+  box-shadow: rgb(38, 57, 77) 0 2vh 3vh -1vh;
+}
+
+input[type="number"] {
+  width: 10vw;
+}
+
+button {
+    width: 10vw;
+  font-size: 3vh;
+  padding: 10px;
+  margin-left: 20vw;
+    border: none;
+
+}
+
+.rhs {
+  height: inherit;
+/*  background-color: yellow;
+*/
+}
