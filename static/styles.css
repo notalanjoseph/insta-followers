@@ -5,7 +5,7 @@ body {
   height: 100vh;
 
   font-family: "Trebuchet MS", sans-serif;
-  background: url("images/bgm.png") no-repeat;
+  background: url("images/bgm.jpg") no-repeat;
   background-position: bottom;
   background-size: cover;
   overflow: hidden;
@@ -27,12 +27,12 @@ h1 {
   height: 60vh;
   width: 80vw;
   margin: auto; /*to centre the container div*/
-  margin-top: 15vh;
+  margin-top: 5vh;
 
   display: grid;
   grid-template-columns: 2fr 1fr;
 
-/*  background-color: grey;
+  /*  background-color: grey;
 */
 }
 
@@ -51,16 +51,15 @@ input[type="number"] {
 }
 
 button {
-    width: 10vw;
+  width: 10vw;
   font-size: 3vh;
   padding: 10px;
   margin-left: 20vw;
-    border: none;
-
+  border: none;
 }
 
 .rhs {
   height: inherit;
-/*  background-color: yellow;
+  /*  background-color: yellow;
 */
 }
