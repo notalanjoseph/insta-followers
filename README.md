@@ -15,11 +15,10 @@ This is a python script that uses selenium to log into your account print the li
 
 ## Usage
 
-- Open the file and edit the `username` and `password` variables with your Instagram credentials.
-- Increase the no.of scroll() calls to fit your no.of followers and following.
+- Open the file and edit the `username`, `password`, `folowers` and `folowing` variables with your Instagram credentials.
 - Run the script using `python InstaNonFollowers.py`.
-- Wait for the script to log in to your Instagram account, navigate to your profile page and execute the iteration.
-- The script will print the list of usernames who you follow but don't follow you back in the terminal.
+- Wait for the script to log into your Instagram account, navigate to your profile page and execute the iteration.
+- The script will print the list of usernames who don't follow you back in the terminal.
 
 ## Disclaimer
 
