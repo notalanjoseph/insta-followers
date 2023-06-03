@@ -5,10 +5,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-username = "not_a_l_a_n"
-password = "freakz"
-folowers = 80
-folowing = 150
+username = ""
+password = ""
+folowers = 
+folowing = 
 count = 0
 iter = 0
 
