@@ -5,8 +5,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-username = ""
-password = ""
+username = "not_a_l_a_n"
+password = "freakz"
+folowers = 80
+folowing = 150
 count = 0
 iter = 0
 
@@ -15,13 +17,11 @@ def login(driver):
     driver.find_element("name", "password").send_keys(password)
     driver.find_element("name", "password").send_keys("\ue007")#
 
-
 def click_button_with_css(driver, css_selector):
     element = WebDriverWait(driver, 20).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, css_selector))
     )
     element.click()
-
 
 def navigate_to_profile(driver):
     dropdown_css = '[alt*="' + username + '"]'
@@ -29,8 +29,7 @@ def navigate_to_profile(driver):
     click_button_with_css(driver, dropdown_css)
     click_button_with_css(driver, profile_css)
 
-
-def get_usernames_from_dialog(driver):
+def get_usernames_from_dialog(driver, n):
     list_xpath = "//div[@role='dialog']//li"#
     xpath_name = '//div[@class="_aano"]/*[1]'
     list_elems = []
@@ -38,7 +37,8 @@ def get_usernames_from_dialog(driver):
     time.sleep(4)
     
     #ADJUST n if needed
-    n = 50 #works for about 500 followers/following
+    #n = 50 works for about 500 followers/following
+    n = n/10
     while (n > 0):
         scroll_down(driver)
         time.sleep(2)
@@ -63,7 +63,6 @@ def get_usernames_from_dialog(driver):
 
     return list_elems
 
-
 def scroll_down(driver):
     global count
     global iter#
@@ -80,7 +79,6 @@ def scroll_down(driver):
             break
     return
 
-
 def check_difference_in_count(driver):
     global count
     new_count = len(driver.find_elements("xpath", "//div[@role='dialog']"))
@@ -89,7 +87,6 @@ def check_difference_in_count(driver):
         return True
     else:
         return False
-
 
 
 def __main__():
@@ -108,7 +105,7 @@ def __main__():
     following_css = '[href*="' + username + '/following/"]'#
 
     click_button_with_css(driver, followers_css)
-    followers_list = get_usernames_from_dialog(driver)
+    followers_list = get_usernames_from_dialog(driver, folowers)
     print("---------------------------------------")
     print("FOLLOWERS LIST: ", len(followers_list))
     print(followers_list)
@@ -118,7 +115,7 @@ def __main__():
     time.sleep(2)
 
     click_button_with_css(driver, following_css)
-    following_list = get_usernames_from_dialog(driver)
+    following_list = get_usernames_from_dialog(driver, folowing)
     print("---------------------------------------")
     print("FOLLOWING LIST: ", len(following_list))
     print(following_list)
