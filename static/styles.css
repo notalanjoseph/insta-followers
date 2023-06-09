@@ -5,6 +5,7 @@ body {
   height: 100vh;
 
   font-family: "Trebuchet MS", sans-serif;
+  font-style: italic;
   background: url("images/bgm.jpg") no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -54,12 +55,16 @@ button {
   width: 10vw;
   font-size: 3vh;
   padding: 10px;
-  margin-left: 20vw;
+  margin-top: 3vw;
   border: none;
+  border-radius: 5px;
+  box-shadow: rgb(38, 57, 77) 0 2vh 3vh -1vh;
 }
 
 .rhs {
+  padding-top: 20vh;
   height: inherit;
+  overflow: auto;
   /*  background-color: yellow;
 */
 }
