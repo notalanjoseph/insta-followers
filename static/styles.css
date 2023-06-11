@@ -73,5 +73,9 @@ button {
   .container {
     grid-template-columns: 1fr;
   }
+  
+  button {
+  width: 20vw;
+  }
 
 }
