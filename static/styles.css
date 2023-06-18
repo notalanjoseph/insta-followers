@@ -4,12 +4,32 @@ body {
   width: 100vw;
   height: 100vh;
 
+  color: white;
   font-family: "Trebuchet MS", sans-serif;
   font-style: italic;
+  /*
   background: url("images/bgm.jpg") no-repeat;
   background-position: bottom;
   background-size: cover;
-  overflow: hidden;
+  */
+  
+  background: linear-gradient(60deg, gold, purple, #00bfff, #ff4c68);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+
+  overflow: hidden auto;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 h1 {
@@ -73,7 +93,7 @@ button {
   .container {
     grid-template-columns: 1fr;
   }
-  
+
   button {
   width: 20vw;
   }
