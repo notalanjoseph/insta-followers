@@ -13,11 +13,11 @@ body {
   background-size: cover;
   */
   
-  background: linear-gradient(300deg, #00bfff, purple, gold,#ff4c68);
+  background: linear-gradient(60deg, gold, purple, #00bfff, #ff4c68);
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
 
-  overflow: hidden;
+  overflow: hidden auto;
 }
 
 @keyframes gradient-animation {
