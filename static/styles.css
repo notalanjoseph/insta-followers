@@ -6,7 +6,6 @@ body {
 
   color: white;
   font-family: "Trebuchet MS", sans-serif;
-  font-style: italic;
   /*
   background: url("images/bgm.jpg") no-repeat;
   background-position: bottom;
@@ -14,8 +13,8 @@ body {
   */
   
   background: linear-gradient(60deg, gold, purple, #00bfff, #ff4c68);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
+  background-size: 200% 180%;
+  animation: gradient-animation 15s ease infinite;
 
   overflow: hidden auto;
 }
@@ -25,7 +24,7 @@ body {
     background-position: 0% 50%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 50% 50%;
   }
   100% {
     background-position: 0% 50%;
