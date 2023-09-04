@@ -7,8 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 username = ""
 password = ""
-folowers = 
-folowing = 
+folowers = 10
+folowing = 10
 count = 0
 iter = 0
 
