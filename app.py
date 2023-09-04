@@ -6,7 +6,7 @@ app.register_blueprint(myviews, url_prefix="/")
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8000)  # port=5000 by default
+    app.run(debug=False, port=8000)  # port=5000 by default
 
 
 
