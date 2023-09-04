@@ -27,13 +27,6 @@ def getData():
 
 
 
-        
-
-
-
-        #username = "not_a_l_a_n"
-        #password = "freakz"
-
         nonfollowers = []
 
         def login(driver):
