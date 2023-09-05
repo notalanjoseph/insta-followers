@@ -1,4 +1,4 @@
-# Instagram non Followers😠
+# Instagram non Followers ┗|｀O′|┛
 
 
 This is a python script that uses selenium to log into your account to display the list of people who you follow but don't follow you back on Instagram using automation.
@@ -6,19 +6,28 @@ This is a python script that uses selenium to log into your account to display t
 ## Requirements
 
 - Python 3.6 or higher
-- Flask 2.3.3 or higher
-- selenium 3.141.0 or higher
-- webdriver_manager 4.0.0 or higher
+- Microsoft Edge 90.0.0 or higher
+- Internet connection
 
 ## Installation
 
 - Clone this repository or download the zip file (main branch).
-- Install the required packages using `pip install -r requirements.txt`.
+```bash
+git clone https://github.com/notalanjoseph/insta-non-followers/tree/main
+```
+- Change directory to insta-non-followers.
+```bash
+cd insta-non-followers
+```
+- Install the python dependencies using `pip` or `pip3`.
+```bash
+pip install -r requirements.txt
+```
 
 ## Usage
 
 - Run the script using `python app.py`. An MS Edge page will open up local server.
-- Enter the credentials `username`, `password`, `no.of followers` & `no.of following` and press "find".
+- Enter the credentials `username`, `password`, `no.of followers` & `no.of following` and press "Find".
 - Wait for the script to log into your Instagram account, navigate to your profile page and execute the iteration.
 - The list of usernames(with links) who don't follow you back will be displayed in the web page.
 
